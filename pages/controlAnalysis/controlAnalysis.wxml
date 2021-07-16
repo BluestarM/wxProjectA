@@ -1,0 +1,84 @@
+<!--pages/controlAnalysis/controlAnalysis.wxml-->
+<view class="page_container" style="{{isIphoneX?'padding-bottom:188rpx':''}}">
+  <block>
+    <view class="info_top">
+      <image src="../../images/calendar.png" class="calendar_img"></image>
+
+      <picker mode="date" value="{{date}}" start="1950-01-01" end="2021-12-31" bindchange="bindDateChange"
+        class="picker_date">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+    <view class="report_main">
+      <view class="report_list">
+        <view class="report_title">
+          <image src="../../images/control.png" class="title_img"></image>
+          <view class="report_left">
+            <text>空压机联控机群</text>
+          </view>
+        </view>
+        <view class="open_report">
+          <view class="report_info" wx:for="{{joinEquipState}}" wx:key="index">
+            <text class="report_group">{{item.deviceName}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="report_list">
+        <view class="report_title">
+          <image src="../../images/control.png" class="title_img"></image>
+          <view class="report_left">
+            <text>压力值</text>
+          </view>
+        </view>
+        <view class="open_report" wx:if="{{pressureData.length>0}}">
+          <view class="report_info">
+            <text class="report_name">联控压力：</text>
+            <view class="report_content">
+              <text class="report_num2">{{realValue}}</text>
+              <text class="report_unit">（MPa）</text>
+            </view>
+          </view>
+          <view class="report_info">
+            <text class="report_name">目标压力：</text>
+            <view class="report_content">
+              <text class="report_num2">{{targetValue}}</text>
+              <text class="report_unit">（MPa）</text>
+            </view>
+          </view>
+          <view class="report_info">
+            <text class="report_name">基准上限：</text>
+            <view class="report_content">
+              <text class="report_num2">{{upperBenchmark}}</text>
+              <text class="report_unit">（MPa）</text>
+            </view>
+          </view>
+          <view class="report_info">
+            <text class="report_name">基准下限：</text>
+            <view class="report_content">
+              <text class="report_num2">{{lowerBenchmark}}</text>
+              <text class="report_unit">（MPa）</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="report_list" catch:tap="goCharts">
+        <view class="report_title">
+          <image src="../../images/control.png" class="title_img"></image>
+          <view class="report_left">
+            <text>联控曲线 （单击查看）</text>
+          </view>
+        </view>
+        <view class="bor_bottom"></view>
+      </view>
+    </view>
+  </block>
+  <!-- <block wx:if="{{reportlist.length==0}}">
+    <view class='havenodata'>
+      <image mode="widthFix" src="../../images/no_data.png" class="no_data"></image>
+      暂无数据哦~
+    </view>
+  </block> -->
+</view>
+<template-footer id="footer" tabActive="{{tabActive}}" title="{{title}}"></template-footer>

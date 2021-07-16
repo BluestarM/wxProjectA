@@ -1,0 +1,50 @@
+/* components/msgScroll/msgScroll.wxss */
+/* 文字滚动 */
+.scroll-top {
+  background-color: #DEE8FF;
+  position: fixed;
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
+.msg-icon {
+  display: inline-block;
+  width: 70rpx;
+  background-color: #DEE8FF;
+  z-index: 2;
+  text-align: center;
+}
+
+.notice-icon {
+  position: absolute;
+  left: 0;
+  top: 16rpx;
+}
+
+.close-icon {
+  position: absolute;
+  left: 680rpx;
+  top: 16rpx;
+  padding-right: 16rpx;
+}
+
+.msg-icon>image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.weui-label,
+.weui-input,
+.weui-select,
+.check-info-btn {
+  font-size: 30rpx;
+}
+
+.scrollbar {
+  /* color: #e0620d; */
+  color: #2294F9;
+  white-space: nowrap;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}

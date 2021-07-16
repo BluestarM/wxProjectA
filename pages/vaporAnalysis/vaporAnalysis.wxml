@@ -1,0 +1,77 @@
+<!--pages/vaporAnalysis/vaporAnalysis.wxml-->
+<view class="page_container" style="{{isIphoneX?'padding-bottom:188rpx':''}}">
+  <block>
+    <view class="info_main">
+      <view class="info_tab">
+        <view class="tab_change" wx:for="{{tablist}}" wx:key="index" data-index="{{index}}" catchtap="changeTab">
+          <text class="{{tabIndex==index?'isTab':''}}">{{item}}</text>
+          <view wx:if="{{tabIndex==index}}" class="tab_line"></view>
+        </view>
+      </view>
+      <view class="info_top">
+        <text>日期</text>
+        <view class="picker">
+          {{date}}
+        </view>
+      </view>
+    </view>
+    
+    <view class="swiper">
+      <swiper class='read_swiper' circular="true" current="{{currentIndex}}" bindchange="changeIndex"
+        bindanimationfinish="changeFinish">
+        <swiper-item>
+          <view class="report_main">
+            <view class="report_list">
+              <view class="report_title">
+                <image src="../../images/yunfen.png" class="title_img"></image>
+                <view class="report_left">
+                  <text>用量分析</text>
+                </view>
+              </view>
+              <view class="open_report">
+                <view class="report_info_all">
+                  <view class="report_info" wx:for="{{runTimeList}}" wx:key="key">
+                    <text class="report_num2">{{item.value}}</text>
+                    <text class="report_name">
+                      {{item.name}} {{item.unit}}
+                    </text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <scroll-view scroll-y='true' style="height:100%">
+            <view class="report_main">
+              <view class="report_list">
+                <view class="report_title">
+                  <image src="../../images/analysis_logo.png" class="title_img"></image>
+                  <view class="report_left">
+                    <text>抄录</text>
+                  </view>
+                </view>
+                <view class="open_report">
+                  <view class="report_info2 report_info_list">
+                    <text>日期</text>
+                    <text>读值 (m³) </text>
+                    <text>增量 (m³) </text>
+                  </view>
+                  <view class="report_info2 report_info_list" wx:for="{{vaporDayDataList}}" wx:key="key">
+                    <text class="report_list_num">{{item.dateNum}}</text>
+                    <text class="report_list_num">{{item.readValue}}</text>
+                    <text class="report_list_num report_list_num2">{{item.total}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+      <view class='show_total text-white-100 bg-black-100 bg-opacity-60' style="{{isIphoneX?'bottom:208rpx':''}}">
+        <text>{{index+1}}/{{allTotal}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+<template-footer id="footer" tabActive="{{tabActive}}" tapActive="{{tapActive}}" title="{{title}}"></template-footer>

@@ -1,0 +1,135 @@
+<!--pages/infoDetails/infoDetails.wxml-->
+<view class="page_container" style="{{isIphoneX?'padding-bottom:188rpx':''}}">
+  <block>
+    <view class="info_top">
+      <text>{{controlName}}实时数据</text>
+      <switch checked="{{isChecked}}" bindchange="changeSwitch"></switch>
+    </view>
+    <view class="report_main">
+      <view class="report_list" data-index='0' catch:tap="changeOpen">
+        <view class="report_title">
+          <image src="../../images/analysis_logo.png" class="title_img"></image>
+          <view class="report_left">
+            <text>空压机健康能耗指标</text>
+            <image src="../../images/up_2.png" wx:if="{{isOpen}}"></image>
+            <image src="../../images/down_2.png" wx:else></image>
+          </view>
+        </view>
+        <view class="open_report" wx:if="{{isOpen}}">
+          <view class="report_info">
+            <text class="report_name">{{reportlist.name}}</text>
+            <view class="report_content"></view>
+          </view>
+          <view class="report_info">
+            <text class="report_name">实时功率：</text>
+            <view class="report_content">
+              <text class="{{isChecked?'report_num2':'report_num'}}">{{reportlist.power}}</text>
+              <text>（kW-h）</text>
+            </view>
+          </view>
+          <view class="report_info none_bottom">
+            <text class="report_name">实时流量：</text>
+            <view class="report_content">
+              <text class="{{isChecked?'report_num2':'report_num'}}">{{reportlist.realFlow}}</text>
+              <text>（m³）</text>
+            </view>
+          </view>
+          <view class="report_info2">
+            <view class="beyond_result">
+              <text class="report_name">电气比：</text>
+              <text class="{{isChecked?'report_num2':'report_num'}}">{{reportlist.degreeFlowPercent}}</text>
+              <text class="report_unit">（kW·h/Nm³）</text>
+            </view>
+            <view class="two_report">
+              <view class="report_info">
+                <text class="report_name">压差：</text>
+                <view class="report_content">
+                  <text class="{{isChecked?'report_num2':'report_num'}}">{{reportlist.maxPressureDiff}}</text>
+                  <text class="report_unit">（MPa）</text>
+                </view>
+              </view>
+              <view class="report_info none_bottom">
+                <text class="report_name">标准：</text>
+                <view class="report_content">
+                  <text class="{{isChecked?'report_num2':'report_num'}}">{{reportlist.standerDqb}}</text>
+                  <text class="report_unit">（kW·h/Nm³）</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="report_line"></view>
+      <view class="report_list" data-index='1' catch:tap="changeOpen">
+        <view class="report_title">
+          <image src="../../images/analysis_logo.png" class="title_img"></image>
+          <view class="report_left">
+            <text>近24小时系统浪费</text>
+            <image src="../../images/up_2.png" wx:if="{{isOpen1}}"></image>
+            <image src="../../images/down_2.png" wx:else></image>
+          </view>
+        </view>
+        <view class="open_report" wx:if="{{isOpen1}}">
+          <view class="report_info2">
+            <view class="beyond_result">
+              <text class="report_name">总浪费：</text>
+              <text class="{{isChecked?'report_num2':'report_num'}}">{{wasteData.allWaste}}</text>
+              <text class="report_unit">（kW·h）</text>
+            </view>
+            <view class="two_report">
+              <view class="report_info">
+                <text class="report_name">空载浪费：</text>
+                <view class="report_content">
+                  <text class="{{isChecked?'report_num2':'report_num'}}">{{wasteData.unloadWaste}}</text>
+                  <text class="report_unit">（kW·h）</text>
+                </view>
+              </view>
+              <view class="report_info">
+                <text class="report_name">压力浪费：</text>
+                <view class="report_content">
+                  <text class="{{isChecked?'report_num2':'report_num'}}">{{wasteData.pressureWaste}}</text>
+                  <text class="report_unit">（kW·h）</text>
+                </view>
+              </view>
+              <view class="report_info none_bottom">
+                <text class="report_name">假性需求压力浪费：</text>
+                <view class="report_content">
+                  <text class="{{isChecked?'report_num2':'report_num'}}">{{wasteData.pressureGapWaste}}</text>
+                  <text class="report_unit">（kW·h）</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="report_line"></view>
+      <view class="report_list" data-index='2' catch:tap="changeOpen">
+        <view class="report_title">
+          <image src="../../images/analysis_logo.png" class="title_img"></image>
+          <view class="report_left">
+            <text>联控压力</text>
+            <image src="../../images/up_2.png" wx:if="{{isOpen2}}"></image>
+            <image src="../../images/down_2.png" wx:else></image>
+          </view>
+        </view>
+        <view class="open_report" wx:if="{{isOpen2}}">
+          <view class="report_info none_bottom">
+            <text class="report_name">实时值：</text>
+            <view class="report_content">
+              <text class="{{isChecked?'report_num2':'report_num'}}">{{targetValue}}</text>
+              <text>（MPa）</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="report_line"></view>
+    </view>
+  </block>
+  <!-- <block wx:if="{{reportlist.length==0}}">
+    <view class='havenodata'>
+      <image mode="widthFix" src="../../images/no_data.png" class="no_data"></image>
+      暂无数据哦~
+    </view>
+  </block> -->
+</view>
+<template-footer tabActive="{{tabActive}}" tapActive="{{tapActive}}" title="{{title}}"></template-footer>

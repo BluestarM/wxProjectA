@@ -1,0 +1,31 @@
+<!--components/footer/footers.wxml-->
+<view class="main_footer" style="{{isIphoneX?'padding-bottom:68rpx':'padding-bottom:0px'}}">
+  <block wx:if="{{tapActive==0}}">
+    <view class="footer_content" wx:for="{{tablist}}" wx:key="index" data-index='{{index}}' catchtap="changeTab">
+      <image src="{{item.img}}" wx:if="{{tabActive==index}}"></image>
+      <image src="{{item.unImg}}" wx:else></image>
+      <text class="{{tabActive==index?'active_tab':''}}">{{item.name}}</text>
+    </view>
+  </block>
+  <block wx:if="{{tapActive==1}}">
+    <view class="footer_content" wx:for="{{tablist2}}" wx:key="index" data-index='{{index}}' catchtap="changeTab">
+      <image src="{{item.img}}" wx:if="{{tabActive==index}}"></image>
+      <image src="{{item.unImg}}" wx:else></image>
+      <text class="{{tabActive==index?'active_tab':''}}">{{item.name}}</text>
+    </view>
+  </block>
+  <block wx:if="{{tapActive==2}}">
+    <view class="footer_content" wx:for="{{tablist3}}" wx:key="index" data-index='{{index}}' catchtap="changeTab">
+      <image src="{{item.img}}" wx:if="{{tabActive==index}}"></image>
+      <image src="{{item.unImg}}" wx:else></image>
+      <text class="{{tabActive==index?'active_tab':''}}">{{item.name}}</text>
+    </view>
+  </block>
+  <block wx:if="{{tapActive==3}}">
+    <view class="footer_content" wx:for="{{tablist4}}" wx:key="index" data-index='{{index}}' catchtap="changeTab">
+      <image src="{{item.img}}" wx:if="{{tabActive==index}}"></image>
+      <image src="{{item.unImg}}" wx:else></image>
+      <text class="{{tabActive==index?'active_tab':''}}">{{item.name}}</text>
+    </view>
+  </block>
+</view>

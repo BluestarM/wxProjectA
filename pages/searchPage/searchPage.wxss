@@ -1,0 +1,8 @@
+/* pages/searchPage/searchPage.wxss */
+.container {
+  padding: 30rpx;
+}
+
+.tree_select {
+  width: 100%;
+}

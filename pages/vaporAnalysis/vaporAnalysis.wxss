@@ -1,0 +1,267 @@
+/* pages/vaporAnalysis/vaporAnalysis.wxss */
+page {
+  height: 100%;
+  background: #E9E9E9;
+}
+.page_container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 140rpx;
+}
+.info_main{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 10;
+  background: #E9E9E9;
+}
+.info_tab{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #fff;
+}
+.info_top {
+  margin:10rpx 2% 0;
+  width: 92%;
+  display: flex;
+  align-items: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 4%;
+  border-bottom: 1px solid #efefef;
+  background: #fff;
+}
+.tab_change{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.isTab{
+  color:#2294F9;
+}
+.tab_line{
+  width: 100%;
+  height: 6rpx;
+  background: #2294F9;
+}
+
+.calendar_img {
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 30rpx;
+}
+
+.info_top text {
+  margin-right: 20rpx;
+}
+
+.report_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.report_line {
+  width: 100%;
+  height: 24rpx;
+  background: #F7F7F7;
+}
+
+.report_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 92%;
+  padding: 20rpx 4% 0;
+}
+
+.report_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.open_report {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 120rpx;
+}
+
+.title_img {
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.report_left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 92%;
+}
+
+.report_left image {
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.date_time text {
+  height: 35rpx;
+  padding: 4rpx 16rpx;
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+  background: #F7F7F7;
+  border-radius: 18rpx;
+}
+
+.report_info_all{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.report_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 49%;
+  height: 140rpx;
+  margin-bottom: 16rpx;
+  font-size: 28rpx;
+  background: #fff;
+}
+
+.report_content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: #000;
+  font-size: 26rpx;
+}
+.report_name{
+  color: #666;
+  line-height: 20rpx;
+}
+
+.report_num2 {
+  margin-top: 10rpx;
+  font-size: 42rpx;
+  color: #2294F9 !important;
+}
+
+.report_unit {
+  font-size: 24rpx;
+}
+
+.report_info2 {
+  display: flex;
+  align-items: center;
+  width: 96%;
+  margin-bottom: 4rpx;
+  padding-left: 4%;
+  font-size: 28rpx;
+  background: #fff;
+}
+
+.report_name2{
+  margin-right: 40rpx;
+  color: #666;
+}
+
+
+.report_info_list{
+  justify-content: space-evenly;
+  padding: 0 2%;
+  height: 60rpx;
+}
+.report_info_list text{
+  width: 25%;
+  text-align: center;
+  font-size: 28rpx;
+}
+.report_list_num{
+  font-size: 32rpx !important;
+}
+.report_list_num2{
+  color: #2294F9;
+}
+
+.report_info3 {
+  display: flex;
+  align-items: center;
+  width: 96%;
+  height: 140rpx;
+  margin-bottom: 16rpx;
+  padding-left: 4%;
+  font-size: 28rpx;
+  background: #fff;
+}
+
+.none_bottom {
+  border-bottom: none;
+}
+
+.swiper {
+  position: relative;
+  height: 100%;
+  margin-top: 170rpx;
+}
+
+.read_swiper {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ceshi_next {
+  position: fixed;
+  top: 50%;
+  right: 20rpx;
+  transform: translate(0, -50%);
+}
+
+.ceshi_img {
+  display: block;
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.ceshi_prew {
+  position: fixed;
+  top: 50%;
+  left: 20rpx;
+  transform: translate(0, -50%);
+}
+
+.show_total {
+  position: fixed;
+  bottom: 140rpx;
+  left: 43%;
+  padding: 6rpx 20rpx;
+  border-radius: 40rpx;
+  background: rgba(0, 0, 0, 0.63);
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+
+.show_total text {
+  color: #fff;
+}

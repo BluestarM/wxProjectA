@@ -1,0 +1,42 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/deviceReport/deviceReport",
+          "pathName": "pages/deviceReport/deviceReport",
+          "query": "title=鑫海纺织压缩空气",
+          "scene": null
+        },
+        {
+          "name": "pages/echartPage/echartPage",
+          "pathName": "pages/echartPage/echartPage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/waterAnalysis/waterAnalysis",
+          "pathName": "pages/waterAnalysis/waterAnalysis",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

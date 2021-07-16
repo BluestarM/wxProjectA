@@ -1,0 +1,17 @@
+<!--components/msgScroll/msgScroll.wxml-->
+<view class="scroll-top" hidden="{{isHiddenMsg}}">
+  <scroll-view>
+    <view class="msg-icon notice-icon">
+      <image src="../../images/notice.png"></image>
+    </view>
+    <view class="scrollbar" style="transform: translateX(-{{distance}}px)">
+      <text style="margin-right:{{space}}px;"></text>
+      <text id="mjltest">{{announcementText}}</text>
+      <text style="margin-right:{{space}}px;"></text>
+      <text>{{announcementText}}</text>
+    </view>
+    <view class="msg-icon close-icon" catchtap="closeMsg">
+      <image src="../../images/close.png"></image>
+    </view>
+  </scroll-view>
+</view>

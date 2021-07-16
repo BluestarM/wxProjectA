@@ -1,0 +1,10 @@
+<!--pages/echartPage/echartPage.wxml-->
+<view class="page_container">
+  <view class="search_report">
+    <view class="info_top">
+      <text>实时数据</text>
+      <switch checked="{{isChecked}}" bindchange="changeSwitch"></switch>
+    </view>
+  </view>
+  <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}" force-use-old-canvas="true"></ec-canvas>
+</view>

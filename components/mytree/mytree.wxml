@@ -1,0 +1,14 @@
+<!--components/mytree/mytree.wxml-->
+<view class="container">
+  <view class="tree-list">
+    <image wx:if='{{ isBranch }}' bindtap='toggle'
+      src="{{ open ? '../../images/show_more.png' : '../../images/show_less.png'}}" class='item-sImg'></image>
+    <text wx:if='{{ isBranch }}' class="haveChildren" data-itemid='{{ model.id }}'
+      data-value='{{ model.label }}'>{{ model.label }}</text>
+    <text wx:if='{{ !isBranch }}' class="noChildren" bindtap='tapItem' data-itemid='{{ model.id }}'
+      data-value='{{ model.label }}'>{{ model.label }}</text>
+  </view>
+  <view style='padding-left: 25rpx;' wx:if='{{ isBranch }}' hidden='{{ !open }}'>
+    <mytree wx:for='{{ model.children }}' wx:key='id' model='{{ item }}'></mytree>
+  </view>
+</view>

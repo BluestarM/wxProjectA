@@ -1,0 +1,170 @@
+/**app.wxss**/
+/* @import './asset/font/iconfont.wxss'; */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+
+.havenodata {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #999;
+  font-size: 32rpx;
+  margin-top: 82rpx;
+}
+
+.no_data {
+  display: block;
+  width: 272rpx;
+  margin-bottom: 80rpx;
+}
+
+
+/* 弹框模板 */
+.task2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+/* 登录授权弹框 */
+.authorTask {
+  border-radius: 10rpx;
+  background: #fff;
+  padding: 50rpx 140rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.authorTask .logo {
+  margin-bottom: 38rpx;
+}
+
+.authorTask .logo image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+
+.authorTask .tip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333;
+}
+
+.authorTask .buttonBox {
+  position: relative;
+  margin: 10rpx;
+}
+
+.authorTask .buttonBox button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.authorTask .buttonBox .button_task {
+  height: 70rpx;
+  width: 320rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 35rpx;
+  background: #08bf62;
+  color: #fff;
+}
+
+.button_task2 {
+  height: 90rpx;
+  width: 320rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  text-align: center;
+  color: #999;
+}
+
+.havenodata {
+  display: flex;
+  color: #999;
+  justify-content: center;
+  font-size: 32rpx;
+  margin-top: 82rpx;
+}
+
+.closeTask_img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.closeTask_img image {
+  display: flex;
+  margin: 20rpx auto;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.gotop {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 140rpx;
+  right: 20rpx;
+}
+
+/* 弹框显示时禁止页面上下滑动 */
+.indexFixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* bottom:0; */
+  right: 0;
+}
+
+/* 开始的样式 */
+.wx-switch-input {
+  width: 86rpx !important;
+  height: 50rpx !important;
+  background: #2294F9 !important;
+  border: #2294F9 !important;
+  box-sizing: border-box;
+}
+
+/* false的样式 */
+.wx-switch-input::before {
+  width: 86rpx !important;
+  height: 50rpx !important;
+  border: 1rpx solid #ededed;
+  background: #999 !important;
+}
+
+/* true的样式 */
+.wx-switch-input::after {
+  width: 50rpx !important;
+  height: 50rpx !important;
+}

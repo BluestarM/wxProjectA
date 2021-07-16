@@ -1,0 +1,26 @@
+<!--pages/login/login.wxml-->
+<view class="page_container">
+	<template-msgScroll></template-msgScroll>
+	<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+	<view class="login_title">
+		<image src="../../images/logo.png"></image>
+		<text>匠心智联</text>
+	</view>
+	<view class="mine_list">
+		<mp-form id="form" rules="{{rules}}" models="{{formData}}">
+			<mp-cells>
+				<mp-cell prop="username" title="账号" ext-class="">
+					<input bindinput="formInputChange" data-field="username" class="weui-input" placeholder="请输入账号" />
+				</mp-cell>
+				<mp-cell prop="password" title="密码">
+					<input password="{{true}}" bindinput="formInputChange" data-field="password" class="weui-input"
+						placeholder="请输入密码" />
+				</mp-cell>
+			</mp-cells>
+		</mp-form>
+	</view>
+	<view class="login_btn">
+		<button bindtap="cancelTap">取消</button>
+		<button class="log_out" bindtap="outTap">登录</button>
+	</view>
+</view>

@@ -1,0 +1,105 @@
+<!--pages/deviceReport/deviceReport.wxml-->
+<view class="page_container" style="{{isIphoneX?'padding-bottom:188rpx':''}}">
+  <block>
+    <view class="search_report">
+      <view class="info_top">
+        <text>实时数据</text>
+        <switch checked="{{isChecked}}" bindchange="changeSwitch"></switch>
+      </view>
+      <image src="../../images/search_1.png" class="search_img" bindtap="searchTap"></image>
+    </view>
+    <view class="info_device">
+      <text bindtap="searchTap">设备名称：{{deviceName}}</text>
+    </view>
+    <view class="swiper">
+      <swiper class='read_swiper' circular="true" current="{{currentIndex}}" bindchange="changeIndex"
+        bindanimationfinish="changeFinish">
+        <swiper-item wx:for="{{detailList}}" wx:key="index">
+          <view class="report_main">
+            <view class="report_list">
+              <view class="report_title">
+                <image src="../../images/control.png" class="title_img"></image>
+                <view class="report_left">
+                  <text>状态类</text>
+                </view>
+              </view>
+              <view class="open_report">
+                <view class="report_status">
+                  <text class="report_name_list">{{description}}</text>
+                </view>
+                <view class="report_status">
+                  <text class="report_group" style="background: {{colorValue}}">{{realValue}}</text>
+                </view>
+              </view>
+            </view>
+            <view class="report_list" data-index='1' bindtap="changeOpen">
+              <view class="report_title">
+                <image src="../../images/control.png" class="title_img"></image>
+                <view class="report_left">
+                  <text>主要参数</text>
+                  <image src="../../images/up_2.png" wx:if="{{isOpen1}}"></image>
+                  <image src="../../images/down_2.png" wx:else></image>
+                </view>
+              </view>
+              <view class="open_report" wx:if="{{isOpen1}}">
+                <view class="report_info_all">
+                  <view class="report_info" wx:for="{{mainList}}" wx:key="index">
+                    <!-- <block wx:if="{{item.realValue}}"> -->
+                      <text class="report_name">{{item.description}}：</text>
+                      <view class="report_content">
+                        <text class="{{isChecked?'report_num2':'report_num'}}">{{item.realValue}}</text>
+                        <text class="report_unit">{{item.unit?item.unit:''}}</text>
+                      </view>
+                    <!-- </block> -->
+                  </view>
+                </view>
+              </view>
+              <!-- <image src="../../images/up_2.png" wx:if="{{isOpen}}" class="down_img" catch:tap="changeOpen"></image>
+              <image src="../../images/down_2.png" wx:else class="down_img" catch:tap="changeOpen"></image> -->
+            </view>
+            <view class="report_list" data-index='2' bindtap="changeOpen">
+              <view class="report_title">
+                <image src="../../images/control.png" class="title_img"></image>
+                <view class="report_left">
+                  <text>电气类</text>
+                  <image src="../../images/up_2.png" wx:if="{{isOpen2}}"></image>
+                  <image src="../../images/down_2.png" wx:else></image>
+                </view>
+              </view>
+              <view class="open_report" wx:if="{{isOpen2}}">
+                <view class="report_info_all">
+                  <view class="report_info" wx:for="{{eleList}}" wx:key="index">
+                    <!-- <block wx:if="{{item.realValue}}"> -->
+                      <text class="report_name">{{item.description}}：</text>
+                      <view class="report_content">
+                        <text class="{{isChecked?'report_num2':'report_num'}}">{{item.realValue}}</text>
+                        <text class="report_unit">{{item.unit?item.unit:''}}</text>
+                      </view>
+                    <!-- </block> -->
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+      <view class='ceshi_next' bindtap='nextImg' wx:if="{{detailList.length>1}}">
+        <image src="../../images/go_right.png" class="ceshi_img"></image>
+      </view>
+      <view class='ceshi_prew' bindtap='prevImg' wx:if="{{detailList.length>1}}">
+        <image src="../../images/go_left.png" class="ceshi_img"></image>
+      </view>
+      <view class='show_total text-white-100 bg-black-100 bg-opacity-60' style="{{isIphoneX?'bottom:208rpx':''}}"
+        wx:if="{{detailList.length>1}}">
+        <text>{{index+1}}/{{allTotal}}</text>
+      </view>
+    </view>
+  </block>
+  <!-- <block wx:if="{{reportlist.length==0}}">
+    <view class='havenodata'>
+      <image mode="widthFix" src="../../images/no_data.png" class="no_data"></image>
+      暂无数据哦~
+    </view>
+  </block> -->
+</view>
+<template-footer id="footer" tabActive="{{tabActive}}" title="{{title}}"></template-footer>

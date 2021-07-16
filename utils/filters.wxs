@@ -1,0 +1,12 @@
+var filters = {
+  toFix: function (value) {
+    if(value<0){
+      value = value.split('-')[1]
+      return parseFloat(value)
+    }
+    return parseFloat(value)
+  }
+}
+module.exports = {
+  toFix: filters.toFix
+}

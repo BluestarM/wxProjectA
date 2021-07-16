@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/mine/mine",
+    "pages/login/login",
+    "pages/infoDetails/infoDetails",
+    "pages/analysis/analysis",
+    "pages/controlAnalysis/controlAnalysis",
+    "pages/deviceReport/deviceReport",
+    "pages/searchPage/searchPage",
+    "pages/echartPage/echartPage",
+    "pages/eleDeviceReport/eleDeviceReport",
+    "pages/eleAnalysis/eleAnalysis",
+    "pages/waterAnalysis/waterAnalysis",
+    "pages/vaporAnalysis/vaporAnalysis"    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2294F9",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#2294F9",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home_unchoose.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine_unchoose.png",
+        "selectedIconPath": "images/mine.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "networkTimeout": {
+    "request": 10000
+  },
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
+  }
+}

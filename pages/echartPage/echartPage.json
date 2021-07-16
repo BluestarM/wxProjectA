@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "折线图",
+  "pageOrientation": "landscape",
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas"
+  }
+}

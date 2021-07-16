@@ -1,0 +1,26 @@
+/* pages/components/mytree/mytree.wxss */
+.container {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.tree-list {
+  padding: 5rpx 0;
+}
+
+.tree-list text {
+  margin-left: 8rpx;
+}
+
+.noChildren {
+  margin-left: 40rpx !important;
+}
+.haveChildren{
+  color: #ccc;
+}
+
+.item-sImg {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}

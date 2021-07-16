@@ -1,0 +1,12 @@
+<view class='com-selectBox'>
+  <view class='com-sContent' bindtap='selectToggle'>
+    <!-- <view class='com-sTxt'>{{nowText}}</view> -->
+    <input type="text" value="{{nowText}}" placeholder="请选择" bindinput="bindKeyInput" disabled="{{true}}"/>
+    <image src='../../images/show_more.png' class='com-sImg'></image>
+  </view>
+  <view class='com-sList' wx:if="{{selectShow}}">
+    <view wx:if='{{ isBranch }}' hidden='{{ !open }}'>
+      <mytree wx:for='{{ model }}' wx:key='id' model='{{ item }}' bind:tapitem='tapItem'></mytree>
+    </view>
+  </view>
+</view>

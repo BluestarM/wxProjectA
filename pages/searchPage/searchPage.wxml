@@ -1,0 +1,6 @@
+<!--pages/searchPage/searchPage.wxml-->
+<view class="container">
+  <block v-if="{{selectArray.length>0}}">
+    <treeSelect class="tree_select" model='{{selectArray}}' bind:tapitem='tapItem'></treeSelect>
+  </block>
+</view>

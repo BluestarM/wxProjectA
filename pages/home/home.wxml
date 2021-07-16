@@ -1,0 +1,33 @@
+<!-- home页面 -->
+<view class="page_container">
+	<view class="home_top">
+		<view class="home_title">选择业务</view>
+		<view class="home_content">
+			<view class="home_content_list" data-index="{{index}}" wx:for="{{datalist}}" wx:key="index" bindtap="listTap">
+				<image src="../../images/home_{{index}}.png" class="list_img"></image>
+				<view class="home_list_info {{tapIndex==index?'car_active':''}}">
+					<text>{{item}}</text>
+					<image src="../../images/next_icon.png" wx:if='{{tapIndex!=index}}'></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- 遮罩层 -->
+<!-- <view class="task2" wx:if='{{carShow}}' catchtouchmove="true" catch:tap="changeShow">
+</view>
+  <view class="picker-wrap" wx:if='{{carShow}}'> 
+    <view class="buycar_dialod">
+      <view class="carlist_content" wx:for="{{buylist}}" wx:key="index">
+        <view class="sel_list" catch:tap="addtap">{{item}}</view>
+      </view>
+    </view>
+  </view> -->
+<!-- </view> -->
+<action-sheet hidden="{{carShow}}" bindchange="changeShow">
+	<block wx:for-items="{{projectlist}}" wx:key="index">
+		<action-sheet-item data-title='{{item.name}}' data-id='{{item.id}}' bindtap="goDetail">{{item.name}}</action-sheet-item>
+	</block>
+	<action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>

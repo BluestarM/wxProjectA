@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "设备选择",
+  "usingComponents": {
+    "treeSelect": "/components/treeSelect/treeSelect"
+  }
+}

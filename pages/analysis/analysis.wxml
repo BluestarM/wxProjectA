@@ -1,0 +1,75 @@
+<!--pages/analysis/analysis.wxml-->
+<view class="page_container" style="{{isIphoneX?'padding-bottom:188rpx':''}}">
+  <block>
+    <view class="info_top">
+      <image src="../../images/calendar.png" class="calendar_img"></image>
+
+      <picker mode="date" value="{{date}}" start="1950-01-01" end="2021-12-31" bindchange="bindDateChange"
+        class="picker_date">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+    <view class="report_main">
+      <view class="report_list">
+        <view class="report_title">
+          <image src="../../images/analysis_logo.png" class="title_img"></image>
+          <view class="report_left">
+            <text>汇总数据</text>
+          </view>
+        </view>
+        <view class="open_report">
+          <view class="report_info" wx:for="{{reportlist}}" wx:key="key" wx:if="{{index < 4}}">
+            <text class="report_name">{{item.name}}：</text>
+            <view class="report_content">
+              <text class="report_num2">{{item.value}}</text>
+              <text>（{{item.unit}}）</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="report_list">
+        <view class="report_title">
+          <image src="../../images/analysis_logo.png" class="title_img"></image>
+          <view class="report_left">
+            <text>节能分析</text>
+          </view>
+        </view>
+        <view class="open_report">
+          <view class="report_info" wx:for="{{reportlist}}" wx:key="key" wx:if="{{index > 3&&index < 8}}">
+            <text class="report_name">{{item.name}}：</text>
+            <view class="report_content">
+              <text class="report_num2">{{item.value}}</text>
+              <text class="report_unit">（{{item.unit}}）</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="report_list">
+        <view class="report_title">
+          <image src="../../images/analysis_logo.png" class="title_img"></image>
+          <view class="report_left">
+            <text>系统浪费</text>
+          </view>
+        </view>
+        <view class="open_report">
+          <view class="report_info" wx:for="{{reportlist}}" wx:key="key" wx:if="{{index > 7}}">
+            <text class="report_name">{{item.name}}：</text>
+            <view class="report_content">
+              <text class="report_num2">{{item.value}}</text>
+              <text class="report_unit">（kW·h）</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- <block wx:if="{{reportlist.length==0}}">
+    <view class='havenodata'>
+      <image mode="widthFix" src="../../images/no_data.png" class="no_data"></image>
+      暂无数据哦~
+    </view>
+  </block> -->
+</view>
+<template-footer id="footer" tabActive="{{tabActive}}" title="{{title}}"></template-footer>
